@@ -1,1 +1,5 @@
-
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/768/original/pexels-quang-nguyen-vinh-2132180.jpg?1679875955");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
