@@ -29,6 +29,7 @@ body {
     background-position: 5440px;
   }
 }
+
 .search {
   border-radius: 20px;
   position: relative;
@@ -77,4 +78,63 @@ body {
   border: 1px solid rgba(134, 134, 134, 0.703);
   color: #2a2939;
   cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-inline-start: 2%;
+  margin-inline-end: 2%;
+}
+.left,
+.right {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  padding-top: 28px;
+}
+.units {
+  line-height: 4;
+  font-size: 20px;
+
+  position: relative;
+  float: inline-end;
+  color: rgba(255, 255, 255, 0.838);
+  text-shadow: rgba(0, 0, 0, 0.288) 1px 0 7px;
+}
+
+.temperature {
+  font-size: 60px;
+  float: left;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.838);
+  text-shadow: rgba(0, 0, 0, 0.288) 1px 0 7px;
+  line-height: 2;
+}
+
+.card {
+  position: absolute;
+  padding: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(21px);
+  display: block;
+  box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  margin: 0;
+  width: 96%;
+  left: 0;
+  bottom: 0;
+}
+.row {
+  display: flex;
+  flex-direction: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.big-coin {
+  width: 120px;
 }
