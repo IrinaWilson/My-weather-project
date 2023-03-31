@@ -79,7 +79,26 @@ body {
   color: #2a2939;
   cursor: pointer;
 }
-
+.second-button {
+  background-color: rgba(255, 255, 255, 0.688);
+  border: 1px solid rgb(255, 255, 255);
+  top: 15px;
+  width: max-content;
+  color: #343347;
+  padding: 13px;
+  transition: all 200ms ease-in-out;
+  border-radius: 20px;
+  box-shadow: rgba(49, 49, 49, 0.334) 1px 0 7px;
+  position: relative;
+  left: 4%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  transition: all 300ms ease-in-out;
+}
+.second-button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}
 .wrapper {
   display: flex;
   justify-content: space-between;
