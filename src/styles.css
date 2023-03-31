@@ -46,3 +46,35 @@ body {
   font-weight: 200;
   text-align: left;
 }
+.search:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(199, 199, 199, 0.311),
+    rgba(176, 176, 176, 0.311)
+  );
+  box-shadow: 0px 9px 30px rgba(39, 19, 41, 0.345);
+  cursor: pointer;
+  color: rgba(17, 14, 17, 0.853);
+}
+
+.search-button {
+  background-color: #2d2c3da4;
+  border: 1px solid #3433477d;
+  top: 15px;
+  color: #d6d6d6;
+  padding: 13px;
+  transition: all 200ms ease-in-out;
+  border-radius: 20px;
+  box-shadow: rgba(49, 49, 49, 0.334) 1px 0 7px;
+  position: relative;
+  left: 3.5%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  transition: all 300ms ease-in-out;
+}
+.search-button:hover {
+  background-color: rgba(215, 215, 215, 0.598);
+  border: 1px solid rgba(134, 134, 134, 0.703);
+  color: #2a2939;
+  cursor: pointer;
+}
