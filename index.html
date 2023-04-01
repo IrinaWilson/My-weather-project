@@ -17,13 +17,14 @@
   <body>
     <div class="container">
       <div class="cloud">
-        <form>
+        <form id="search-form">
           <input
             type="text"
             placeholder="Type your city.."
             autocomplete="off"
             autofocus="off"
             class="search"
+            id="search-text-input"
           />
 
           <input type="submit" class="search-button" value="Search" />
@@ -85,7 +86,7 @@
         </div>
         <div class="wrapper">
           <div class="left">
-            <span class="city">Canberra</span>
+            <span class="city" id="place">Canberra</span>
             <br />
             <span class="time">
               16:33
@@ -96,7 +97,7 @@
 
           <div class="right">
             <img src="#" alt="clear" class="big-coin" />
-            <div class="temperature">5</div>
+            <div class="temperature" id="temp">5</div>
             <small>
               <strong class="units">
                 <a href="#" class="celcium-conversion">°C</a>|
@@ -106,9 +107,9 @@
             <br />
             <div class="description">
               <ul>
-                <li class="wind">Wind:8km/h</li>
-                <li class="humidity">Humidity:77%</li>
-                <li class="weather-conditions">Cloudy</li>
+                <li class="wind" id="wSpeed">Wind:8km/h</li>
+                <li class="humidity" id="humidityT">Humidity:77%</li>
+                <li class="weather-conditions" id="conditions">Cloudy</li>
               </ul>
             </div>
           </div>
