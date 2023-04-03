@@ -111,6 +111,7 @@ body {
   display: block;
   padding-top: 28px;
 }
+
 .units {
   line-height: 4;
   font-size: 20px;
@@ -154,7 +155,13 @@ body {
 }
 
 .big-coin {
-  width: 50px;
+  width: 120px;
+  float: right;
+}
+img {
+  vertical-align: middle;
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }
 .date {
   font-style: italic;
