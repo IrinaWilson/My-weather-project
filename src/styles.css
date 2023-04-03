@@ -154,7 +154,7 @@ body {
 }
 
 .big-coin {
-  width: 120px;
+  width: 50px;
 }
 .date {
   font-style: italic;
@@ -184,7 +184,7 @@ body {
 }
 a {
   text-decoration: underline;
-  color: #1e715c;
+  color: yellow;
 }
 .description {
   font-size: 20px;
