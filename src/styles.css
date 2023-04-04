@@ -163,6 +163,13 @@ img {
   overflow-clip-margin: content-box;
   overflow: clip;
 }
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
 .date {
   font-style: italic;
   color: #3b545c;
@@ -190,8 +197,8 @@ img {
   margin: 0;
 }
 a {
-  text-decoration: underline;
   color: yellow;
+  text-decoration: none;
 }
 .description {
   font-size: 20px;
@@ -210,7 +217,7 @@ ul {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 6px;
+  padding-inline-start: 60px;
 }
 
 li {
