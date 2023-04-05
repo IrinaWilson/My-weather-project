@@ -39,6 +39,27 @@ sDate.innerHTML = `${day}, ${date} ${month}`;
 let sTime = document.querySelector(".time");
 sTime.innerHTML = `${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="column">
+              <span class="monday">${day}</span>
+              <br />
+              <span class="emoji1">⛅</span>
+              <br />
+              <span class="temp1-max">5°</span>
+              <span class="temp1-min">2°</span>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temp");
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -117,3 +138,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+displayForecast();
