@@ -28,7 +28,7 @@ let month = months[now.getMonth()];
 let day = days[now.getDay()];
 let hours = now.getHours();
 if (hours < 10) {
-  hours = `0 ${hours}`;
+  hours = `0${hours}`;
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
@@ -39,30 +39,49 @@ sDate.innerHTML = `${day}, ${date} ${month}`;
 let sTime = document.querySelector(".time");
 sTime.innerHTML = `${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="column">
-              <span class="monday">${day}</span>
+              <span class="monday">${formatDay(forecastDay.time)}</span>
               <br />
-              <span class="emoji1">⛅</span>
+             <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+               forecastDay.condition.icon
+             }.png" alt="" class="emoji1"/>
               <br />
-              <span class="temp1-max">5°</span>
-              <span class="temp1-min">2°</span>
-            </div>`;
+              <span class="temp1-max">${Math.round(
+                forecastDay.temperature.maximum
+              )}°</span>
+              <span class="temp1-min">${Math.round(
+                forecastDay.temperature.minimum
+              )}°</span>
+            </div>
+            `;
+    }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
-  let apiKey = "3dce9b1c66837262a25b3f448d354a76";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(coordinates);
+  let apiKey = "80083fa950bb6bac505970t4eao412fe";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -91,7 +110,7 @@ function showTemperature(response) {
   );
   locationIcon.setAttribute("alt", response.data.weather[0].descripton);
 
-  getForecast(coordinates);
+  getForecast(response.data.coord);
 }
 
 function search(event) {

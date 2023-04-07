@@ -225,13 +225,7 @@ li {
   margin: 0;
   padding: 0;
 }
-.monday,
-.tuesday,
-.wednsday,
-.thursday,
-.friday,
-.saturday,
-.sunday {
+.monday {
   font-family: "Poppins", sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: rgba(0, 0, 0, 0.501);
@@ -244,15 +238,9 @@ li {
   cursor: pointer;
   font-size: 15px;
 }
-.emoji1,
-.emoji2,
-.emoji3,
-.emoji4,
-.emoji5,
-.emoji6,
-.emoji7 {
+.emoji1 {
   font-size: 50px;
-  margin-left: 1px;
+  margin-left: 0px;
 }
 .temp1-max {
   font-size: 23px;
@@ -261,7 +249,7 @@ li {
   text-shadow: rgba(0, 0, 0, 0.362) 1px 0 7px;
   font-family: "Poppins";
   font-weight: 500;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 .temp1-min {
   font-size: 23px;
