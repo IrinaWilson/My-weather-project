@@ -162,6 +162,7 @@ img {
   vertical-align: middle;
   overflow-clip-margin: content-box;
   overflow: clip;
+  width: 80px;
 }
 .weather-temperature .active {
   color: black;
@@ -234,9 +235,9 @@ li {
   font-weight: 200;
   border-radius: 30px;
   color: rgb(255, 255, 255);
-  padding: 8px 15px;
   cursor: pointer;
   font-size: 15px;
+  padding: 8px 25px;
 }
 .emoji1 {
   font-size: 50px;
