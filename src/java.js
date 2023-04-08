@@ -114,20 +114,18 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-function search(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#search-text-input");
-  let h1 = document.querySelector("#place");
-  h1.innerHTML = `${cityInput.value}`;
-
+function search(city) {
   let apiKey = "3dce9b1c66837262a25b3f448d354a76";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemperature);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-text-input");
+  search(cityInputElement.value);
+}
 
 function showPosition(position) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -157,6 +155,9 @@ function displayCelsiusTemp(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
 let celsiusTemperature = null;
 let button = document.querySelector("#getPosition");
 button.addEventListener("click", getCurrentPosition);
@@ -166,3 +167,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+search("Madrid");
